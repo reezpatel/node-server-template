@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "ESNext",
+    "lib": [],
+    "module": "CommonJS",
+    "paths": {},
+    "preserveWatchOutput": true,
+    "typeRoots": ["./types"],
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "outDir": "./build",
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["./src", "types/types.ts"]
+}

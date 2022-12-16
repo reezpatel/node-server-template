@@ -1,0 +1,40 @@
+{
+  "name": "node-server-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "codegen": "graphql-codegen",
+    "tsc": "tsc",
+    "tsc:watch": "tsc -w",
+    "codegen:watch": "graphql-codegen -w",
+    "nodemon:watch": "nodemon build/index.js",
+    "dev": "concurrently \"yarn run tsc:watch\" \"yarn run codegen:watch\" \"yarn run nodemon:watch\"",
+    "prisma": "prisma",
+    "db:apply": "prisma db push && prisma generate"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.16.1",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/node": "^18.11.15",
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@fastify/env": "^4.2.0",
+    "@graphql-codegen/typescript": "^2.8.5",
+    "@graphql-codegen/typescript-operations": "^2.5.10",
+    "@graphql-codegen/typescript-resolvers": "^2.7.10",
+    "@graphql-tools/load-files": "^6.6.1",
+    "@graphql-tools/merge": "^8.3.14",
+    "@graphql-tools/schema": "^9.0.12",
+    "@prisma/client": "4.7.1",
+    "date-fns": "^2.29.3",
+    "fastify": "^4.10.2",
+    "graphql": "^16.6.0",
+    "graphql-yoga": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "prisma": "^4.7.1"
+  }
+}

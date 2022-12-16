@@ -1,0 +1,42 @@
+type UserRole {
+  resource: String
+  role: [String]
+}
+
+type AuthUser {
+  name: String
+  id: Int
+  roles: [UserRole]
+  image: String
+}
+
+type SignInResponse {
+  success: Boolean
+  error: String
+  user: AuthUser
+  token: String
+}
+
+input IRegistration {
+  password: String!
+  name: String!
+  email: String!
+}
+
+type RegistrationResponse {
+  success: Boolean
+  error: String
+  id: Int
+  user: AuthUser
+  token: String
+}
+
+type Query {
+  AuthUser(token: String!): AuthUser
+}
+
+type Mutation {
+  signInWithCredentials(email: String!, password: String!): SignInResponse
+  registerWithCredentials(input: IRegistration!): RegistrationResponse
+  confirmCredentialsRegistration(id: Int!, code: Int!): RegistrationResponse
+}
